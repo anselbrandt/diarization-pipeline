@@ -207,7 +207,7 @@ results = getAllFiles()
 
 for file in results:
     try:
-        diarize(file)
+        # diarize(file)
         updateStatus(file, "done")
     except:
         updateStatus(file, "failed")
