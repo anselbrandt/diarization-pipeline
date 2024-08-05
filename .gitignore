@@ -1,0 +1,6 @@
+__pycache__
+files
+mono
+*.db
+*.mp3
+*.wav
