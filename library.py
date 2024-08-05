@@ -43,7 +43,8 @@ def getNext():
     return result
 
 
-def updateStatus(id, status):
+def updateStatus(file, status):
+    (id, audio_path, filename, showname, episode, title, duration, status) = file
     conn = sqlite3.connect("roderick.db")
     c = conn.cursor()
 

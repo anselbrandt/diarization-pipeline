@@ -2,7 +2,6 @@ import os
 import torch
 from library import (
     getAllFiles,
-    getNext,
     transcribe_batched,
     transcribe,
     wav2vec2_langs,
@@ -29,6 +28,7 @@ import re
 
 def diarize(file):
     (id, audio_path, filename, showname, episode, title, duration, status) = file
+    print(f"processing {filename}...")
     vocal_target = audio_path
 
     whisper_model_name = "large-v3"
@@ -208,6 +208,6 @@ results = getAllFiles()
 for file in results:
     try:
         diarize(file)
-        updateStatus(id, "done")
+        updateStatus(file, "done")
     except:
-        updateStatus(id, "failed")
+        updateStatus(file, "failed")
